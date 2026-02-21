@@ -1,42 +1,149 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Paleta de colores oficial del PDF */
+:root {
+  --navy-blue: #003366;
+  --gold-text: #FFCC00;
+  --bg-gray: #f0f2f5;
+  --card-white: #ffffff;
+}
+
+body {
+  background-color: var(--bg-gray);
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Barra de Navegación (Página 4 del PDF) */
+.navbar {
+  background-color: var(--navy-blue);
+  color: var(--gold-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.details-button {
+  background-color: #ffc107;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Encabezados de Sección Azules */
+.section-header {
+  background-color: var(--navy-blue);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+/* Contenedor de Tarjetas (Grid de 3 o 4 columnas) */
+.item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Diseño de la Tarjeta (Item Card) */
+.item-card {
+  background: var(--card-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 260px;
+  text-align: center;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+
+.item-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.item-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Controles de Cantidad (+/-) */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Ventana de Resumen (Modal de la Página 5) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.summary-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 900px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.summary-table th {
+  background-color: var(--navy-blue);
+  color: white;
+  padding: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.summary-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.grand-total {
+  color: #d9534f;
+  font-size: 2.5rem;
+  margin: 10px 0;
 }
